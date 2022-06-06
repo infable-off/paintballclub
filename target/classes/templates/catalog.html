@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/favicon.png"/>
+    <link type="text/css" rel="stylesheet" href="../css/global.css">
+    <link type="text/css" rel="stylesheet" href="../css/catalog.css">
+
+    <title>Каталог товаров</title>
+</head>
+<body>
+<header class="header">
+    <nav class="nav">
+        <a th:href="@{/}" class="nav-logo">PaintBallClub</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a th:href="@{/catalog}" class="nav-link">Каталог игровых зон</a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/delivery}" class="nav-link">Доставка</a>
+            <li class="nav-item" sec:authorize="!isAuthenticated()">
+                <a  th:href="@{/login}" class="nav-link">Войти</a>
+            </li>
+            <li class="nav-item" sec:authorize="isAuthenticated()">
+                <a  th:href="@{/logout}" class="nav-link">Выйти</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+<main class="main">
+    <div class="wrapper">
+        <div class="lineForSale">
+            <p>На данной странице вы найдёте различные карты для игры в пейнтбол</p>
+        </div>
+        <div class="card">
+            <br>
+            <p>Карта "Жесть"</p>
+            <div class="gallery">
+                <div class="img-gallery"><img src="./images/zhest1.jpg" alt=""></div>
+                <div class="img-gallery"><img src="./images/zhest2.jpg" alt=""></div>
+                <div class="img-gallery"><img src="./images/zhest3.jpg" alt=""></div>
+                <div class="img-gallery"><img src="./images/zhest4.jpg" alt=""></div>
+                <div class="img-gallery"><img src="./images/zhest4.jpg" alt=""></div>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+<script src="../js/global.js"></script>
+</body>
+</html>
